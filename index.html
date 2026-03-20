@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realr — Anonymous, Location-Based Messaging</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e12;
+            --card: #16161d;
+            --primary: #6C63FF;
+            --primary-glow: rgba(108, 99, 255, 0.15);
+            --text: #e2e2e8;
+            --muted: #8a8a9a;
+            --border: rgba(255,255,255,0.06);
+            --gold: #FFD166;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-left: 1px;
+            vertical-align: super;
+        }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .hero h1 .highlight {
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        .cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(108, 99, 255, 0.3);
+        }
+
+        /* Features */
+        .features {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 0.75rem;
+        }
+        footer a:hover { color: var(--text); }
+        .footer-links { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">R<span class="dot"></span> realr</a>
+        <nav>
+            <a href="/privacy">Privacy</a>
+            <a href="mailto:contact@realrapp.com">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Say what's <span class="highlight">real</span>.<br>Right where you are.</h1>
+        <p>Anonymous, location-based messaging. Drop posts on the map, connect with people nearby, and disappear when the timer runs out.</p>
+        <div class="cta-row">
+            <a href="https://play.google.com/store/apps/details?id=com.realrapp.realr" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.808 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                Get on Google Play
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(108,99,255,0.15); color: #6C63FF;">📍</div>
+            <h3>Hyper-Local</h3>
+            <p>See posts from people within walking distance. The closer you get, the more you see.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(255,209,102,0.15); color: #FFD166;">🎭</div>
+            <h3>Stay Anonymous</h3>
+            <p>Toggle between your real name and a random username at any time. You're in control.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(76,175,80,0.15); color: #4CAF50;">⏱️</div>
+            <h3>Ephemeral Posts</h3>
+            <p>Every post has a timer. When it expires, it's gone forever. Nothing lives on Realr.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(244,67,54,0.15); color: #F44336;">💬</div>
+            <h3>Real Connections</h3>
+            <p>Found someone interesting? Send a connection request and start a private conversation.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(255,152,0,0.15); color: #FF9800;">📡</div>
+            <h3>Expand Your Reach</h3>
+            <p>Upgrade your tier to post more, see farther, and keep your posts alive longer.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background: rgba(156,39,176,0.15); color: #9C27B0;">🔒</div>
+            <h3>Privacy First</h3>
+            <p>No email required. No tracking when the app is closed. Your data stays yours.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="mailto:contact@realrapp.com">Contact</a>
+        </div>
+        &copy; 2026 Realr. All rights reserved.
+    </footer>
+</body>
+</html>
